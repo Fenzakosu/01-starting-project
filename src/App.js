@@ -10,21 +10,19 @@ function App() {
 	console.log("APP RUNNING!");
 
 	const toggleParagraphHandler = useCallback(() => {
-		if (allowToggle) {
+		if (allowToggle)
 			setShowParagraph((prevShowParagraph) => !prevShowParagraph);
-		}
 	}, [allowToggle]);
-
 	const allowToggleHandler = () => {
-		setAllowToggle((prevAllowToggle) => !prevAllowToggle);
+		setAllowToggle((prevToggle) => !prevToggle);
 	};
 
 	return (
 		<div className="app">
 			<h1>Hi there!</h1>
 			<DemoOutput show={showParagraph} />
-			<Button onClick={allowToggleHandler}>Allow Toggling!</Button>
-			<Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
+			<Button onClick={toggleParagraphHandler}>Toggle Paragraph</Button>
+			<Button onClick={allowToggleHandler}>Allow Toggling</Button>
 		</div>
 	);
 }
